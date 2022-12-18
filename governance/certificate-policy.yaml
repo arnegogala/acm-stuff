@@ -1,0 +1,20 @@
+spec:
+  remediationAction: inform
+  disabled: false
+  policy-templates:
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: CertificatePolicy
+        metadata:
+          name: policy-certificatepolicy-cert-expiration
+        spec:
+          namespaceSelector:
+            include:
+- default
+              - openshift-console
+              - openshift-ingress
+            exclude:
+              - kube-*
+          remediationAction: inform
+          severity: low
+          minimumDuration: 300h
