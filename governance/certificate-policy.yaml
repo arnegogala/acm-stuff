@@ -10,7 +10,7 @@ spec:
         spec:
           namespaceSelector:
             include:
-- default
+              - default
               - openshift-console
               - openshift-ingress
             exclude:
