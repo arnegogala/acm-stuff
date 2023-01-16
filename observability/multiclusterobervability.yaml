@@ -21,6 +21,7 @@ spec:
     metricObjectStorage:
       key: thanos.yaml
       name: thanos-object-storage
+      tlsSecretName: tls-certs-secret --->>> check if needed
     receiveStorageSize: 100Gi
     ruleStorageSize: 1Gi
     storageClass: nutanix
