@@ -2,7 +2,11 @@
 
 - `oc create namespace open-cluster-management-observability`
 - `DOCKER_CONFIG_JSON=$(oc extract secret/pull-secret -n openshift-config --to=-)`
-- 
+- `oc create secret generic  multiclusterhub-operator-pull-secret  -n open-cluster-management-observability  --from-literal=.dockerconfigjson="$DOCKER_CONFIG_JSON" --type=kubernetes.io/dockerconfigjson`
+- create secret containing the custom CA if needed
+- edit `thanos-object-storage-secret.yaml`
+- `oc apply -f thanos-object-storage-secret.yaml`
+- `oc apply -f multiclusterobervability.yaml`
 
 # Documentation generic
 Install the RHACM Observability Stack
