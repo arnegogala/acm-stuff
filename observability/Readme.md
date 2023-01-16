@@ -1,3 +1,10 @@
+# Flow
+
+- `oc create namespace open-cluster-management-observability`
+- `DOCKER_CONFIG_JSON=$(oc extract secret/pull-secret -n openshift-config --to=-)`
+- 
+
+# Documentation generic
 Install the RHACM Observability Stack
 
 Create the namespace:
